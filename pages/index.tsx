@@ -1,23 +1,21 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
+import { Document, Page, View, Text, Image, PDFViewer, StyleSheet, Font } from "@react-pdf/renderer";
 const SuperfluidSDK = require("@superfluid-finance/js-sdk");
 const { Web3Provider } = require("@ethersproject/providers");
+import Link from "next/link"
+var Web3 = require('web3');
+var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mainnet.maticvigil.com/'));
 
-const inter = Inter({ subsets: ['latin'] })
 const receipt = () => {
   const genPDF = async () => {
-  const sf = new SuperfluidSDK.Framework({ethers: new Web3Provider(window.ethereum)});
-  await sf.initialize()
-  const carol = sf.user({
-    address: walletAddress[0],
-    token: '0xF2d68898557cCb2Cf4C10c3Ef2B034b2a69DAD00'
-  });
-
-  }
+    
+   }
+  useEffect(() => {
+    genPDF()
+	}, [])
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
@@ -59,6 +57,7 @@ const receipt = () => {
             </select>
           </div>
         </div>
+        <Link href="/Pdf"></Link>
         <div className="md:flex md:items-center">
           <div className="md:w-1/3"></div>
           <div className="md:w-2/3">
@@ -66,6 +65,7 @@ const receipt = () => {
             onClick={genPDF}>
               Get PDF
             </button>
+            
           </div>
         </div>
       </form>
