@@ -20,6 +20,8 @@
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "ethers": "^6.0.4",
+    "html-to-pdf-js": "^0.9.3",
+    "html2pdf.js": "^0.10.1",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
