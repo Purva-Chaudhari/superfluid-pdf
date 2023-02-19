@@ -15,7 +15,7 @@ graphUrl.set(
   "avalanche","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-avalanche-c"
 )
 graphUrl.set(
-  "arbirtum","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-arbitrum-one"
+  "arbitrum","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-arbitrum-one"
 )
 graphUrl.set(
   "bnb","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-bsc-mainnet"
@@ -64,6 +64,7 @@ export default async function handler(
   let body;
   if (req.query.chain != undefined) {
     gUrl = graphUrl.get(req.query.chain);
+    console.log(req.query.chain, gUrl)
   } else {
     res.status(502).json({ error: 'chain not defined' })
   }
@@ -82,16 +83,19 @@ export default async function handler(
     );
 
   let data = await response.json();
-  data = data["data"]["stream"]
-  let amount = parseInt(data["flowUpdatedEvents"][0]["totalAmountStreamedUntilTimestamp"])
+  data = data["data"]["stream"];
+  let amount = 0;
+  for(let i = 0; i < data["flowUpdatedEvents"].length; i++){
+    amount += parseInt(data["flowUpdatedEvents"][i]["totalAmountStreamedUntilTimestamp"])
+  }
   let time = parseInt(data["endTimestamp"]) - parseInt(data["startTimestamp"])
   let tokenFlowRate = amount / time
-  console.log(data)
+  console.log(amount)
   res.status(200).json({
     flowRate: data["currentFlowRate"],
     sender: data["sender"]["id"],
     reciever: data["receiver"]["id"],
-    amount: data["flowUpdatedEvents"][0]["totalAmountStreamedUntilTimestamp"],
+    amount: amount.toString(),
     token: data["token"]["symbol"],
     startTimestamp: data["createdAtTimestamp"],
     endTimestamp: data["updatedAtTimestamp"]
