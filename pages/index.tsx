@@ -1,10 +1,9 @@
+// @ts-nocheck
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
 import { Document, Page, View, Text, Image, PDFViewer, StyleSheet, Font } from "@react-pdf/renderer";
-const SuperfluidSDK = require("@superfluid-finance/js-sdk");
-const { Web3Provider } = require("@ethersproject/providers");
 import Link from "next/link"
 import { useRouter } from 'next/router';
 
@@ -41,7 +40,7 @@ const receipt = () => {
     <div className="h-screen flex flex-col items-center justify-center">
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               Super fluid ID
             </label>
           </div>
@@ -52,7 +51,7 @@ const receipt = () => {
 
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               Network
             </label>
           </div>

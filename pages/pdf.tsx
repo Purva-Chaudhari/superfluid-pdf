@@ -33,14 +33,14 @@ export default function Pdf(){
                     </div>
                 </nav>
                 <div className="text-center bg-gray-50 text-gray-800 py-20 px-6">
-                    <button onClick={() => generatePdf()} className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Get pdf</button>
+                    <button onClick={() => generatePdf()} className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" role="button">Get pdf</button>
                 </div>
           </header>
         {/* <div className='box-border h-32 w-32 p-4 bg-white pl-100' /> */}
         
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" >
               Sender
             </label>
           </div>
@@ -52,7 +52,7 @@ export default function Pdf(){
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               Receiver
             </label>
           </div>
@@ -64,7 +64,7 @@ export default function Pdf(){
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               Token per second
             </label>
           </div>
@@ -76,7 +76,7 @@ export default function Pdf(){
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" >
               Start timestamp
             </label>
           </div>
@@ -89,7 +89,7 @@ export default function Pdf(){
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               End Timestamp
             </label>
           </div>
@@ -101,7 +101,7 @@ export default function Pdf(){
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
-            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
+            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
               Total Money Transferred till now
             </label>
           </div>
