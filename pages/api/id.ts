@@ -5,7 +5,21 @@ const graphUrl = new Map();
 graphUrl.set(
   "polygon","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-matic"
 )
-
+graphUrl.set(
+  "gnosis-chain","https://api.thegraph.com/subgraphs/name/superfluid-finance/xdai-mainnet"
+)
+graphUrl.set(
+  "optimism","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-optimism-mainnet"
+)
+graphUrl.set(
+  "avalanche","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-avalanche-c"
+)
+graphUrl.set(
+  "arbirtum","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-arbitrum-one"
+)
+graphUrl.set(
+  "bnb","https://api.thegraph.com/subgraphs/name/superfluid-finance/protocol-v1-bsc-mainnet"
+)
 /*
   @param sender
   @param recipient
