@@ -1,3 +1,4 @@
+
 .main {
   display: flex;
   flex-direction: column;
@@ -5,6 +6,10 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+}
+
+.navbar{
+  background: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
 }
 
 .description {

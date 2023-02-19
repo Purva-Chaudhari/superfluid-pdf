@@ -9,12 +9,18 @@ import Link from "next/link"
 import { useRouter } from 'next/router';
 
 
-
+function addScript() {
+  var script = document.createElement('script');
+  script.type = 'application/javascript';
+  script.src = "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js";
+  document.head.appendChild(script);
+  //eval("const element = document.getElementById('pdf');html2pdf().from(element).save()")
+}
 const receipt = () => {
   const router = useRouter();
   const [chain, setChain] = useState("");
   const [streamId, setStreamId] = useState("");
-
+  useEffect(addScript, []) 
   const getStream = async () => {
     let resp = await fetch(`/api/id?chain=${chain}&streamId=${streamId}`);
     let data = await resp.json();
@@ -43,6 +49,7 @@ const receipt = () => {
             <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" placeholder="eg: 0x..." onChange={e => setStreamId(e.target.value)}/>
           </div>
         </div>
+
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
             <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" type="text">
@@ -56,7 +63,7 @@ const receipt = () => {
                 setChain(e.target.options[e.target.selectedIndex].text)
               }
             }>
-              <option>polygon</option>
+              <option selected="selected">polygon</option>
               <option>Avalanche C</option>
               <option>Ethereum</option>
             </select>
@@ -71,7 +78,7 @@ const receipt = () => {
           <div className="md:w-2/3">
             <button className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" 
             onClick={getStream}>
-              Get PDF
+              Search
             </button>
           </div>
         </div>
